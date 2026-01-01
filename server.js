@@ -1,15 +1,14 @@
 const express = require('express');
 
+require('dotenv').config();
 const app = express();
 
- require('./db');
+require('./db');
 
- require('dotenv').config();
 const bodyPaser = require('body-parser');
 
 app.use(bodyPaser.json());
 
-const MenuItems = require('./models/menu_item');
 
 app.get('/', (req, res) => {
     res.send("hello world");
